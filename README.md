@@ -1,2 +1,2 @@
-# ALGORITHMS
-Some utilities in algorithms
+﻿# 👽 ALGORITHMS
+Some algorithms to blow your mind
