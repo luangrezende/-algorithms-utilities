@@ -1,2 +1,2 @@
-# -algorithms-utilities
+# ALGORITHMS
 Some utilities in algorithms
