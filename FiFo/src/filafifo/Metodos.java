@@ -1,5 +1,4 @@
 package filafifo;
-
 import Classes.pessoa;
 
 public class Metodos {

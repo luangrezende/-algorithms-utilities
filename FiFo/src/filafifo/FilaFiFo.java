@@ -1,5 +1,4 @@
 package filafifo;
-
 import Classes.pessoa;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -9,8 +8,6 @@ public class FilaFiFo {
         Metodos mtd = new Metodos();
         
         ArrayList<pessoa> user = new ArrayList<>();
-        
-        
         
         System.out.println(user[0].getNome());
         
