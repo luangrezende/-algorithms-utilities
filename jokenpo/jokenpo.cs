@@ -44,18 +44,12 @@ namespace jokenpo
             }
             else
             {
-                if(machinePlayConverted == JokenpoDictionary.razor 
+                if((machinePlayConverted == JokenpoDictionary.razor 
                 && userPlayConverted == JokenpoDictionary.rock)
-                {
-                    return PrintResultTranslated(userPlay, true);
-                }
-                else if(machinePlayConverted == JokenpoDictionary.paper 
+                || (machinePlayConverted == JokenpoDictionary.paper 
                 && userPlayConverted == JokenpoDictionary.razor)
-                {
-                    return PrintResultTranslated(userPlay, true);
-                }
-                else if(machinePlayConverted == JokenpoDictionary.rock 
-                && userPlayConverted == JokenpoDictionary.paper)
+                || (machinePlayConverted == JokenpoDictionary.rock 
+                && userPlayConverted == JokenpoDictionary.paper))
                 {
                     return PrintResultTranslated(userPlay, true);
                 }
