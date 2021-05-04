@@ -26,8 +26,8 @@ namespace jokenpo
             var resultToPrint = (JokenpoDictionary)result;
 
             return isWinner ? 
-                $"Parabens! você jogou {resultToPrint} e ganhou!!"
-                : $"Vishh! você jogou {resultToPrint} e perdeu!!";
+                $"Well done! you played {resultToPrint} and win!!"
+                : $"Oh no! you played {resultToPrint} an loss!!";
 
         }
 
@@ -36,11 +36,8 @@ namespace jokenpo
             var machinePlayConverted = (JokenpoDictionary)machinePlay;
             var userPlayConverted = (JokenpoDictionary)userPlay;
 
-            Console.WriteLine($"eu: {userPlayConverted}");
-            Console.WriteLine($"maquina: {machinePlayConverted}");
-
             if(machinePlay == userPlay){
-                return $"Empate!! jogue novamente.";
+                return $"A tie!! play again.";
             }
             else
             {
@@ -65,13 +62,13 @@ namespace jokenpo
             string result;
             int player;
 
-            Console.WriteLine("Faça sua jogada!!!! \n1 - Pedra \n2 - Papel \n3 - Tesoura");
+            Console.WriteLine("Do you play!! \n1 - Rock \n2 - Paper \n3 - Razor");
             player = Convert.ToInt16(Console.ReadLine());
             
             Console.WriteLine("Jokenpo!!");
 
             result = PlayJokenpoAndPrintResult(player);
-            Console.WriteLine($"Resultado é: {result}");
+            Console.WriteLine($"The result is: {result}");
         }
 
         public enum JokenpoDictionary
