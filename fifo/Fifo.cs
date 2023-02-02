@@ -22,6 +22,10 @@
 
         public void StartFilo()
         {
+            for (int i = _names.Length; i > 0; i--)
+            {
+                Console.WriteLine(_names[i-1]);
+            }
         }
     }
 }
