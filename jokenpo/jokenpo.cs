@@ -1,3 +1,4 @@
+using Jokenpo.Enum;
 using System;
 
 namespace jokenpo
@@ -21,62 +22,83 @@ namespace jokenpo
             return play;
         }
 
-        public string PrintResultTranslated(int result, bool isWinner)
+        public static string PrintResultTranslated(JokenpoEnum playerPlay, JokenpoEnum machinePlay, bool isWinner)
         {
-            var resultToPrint = (JokenpoEnum)result;
-
             return isWinner ? 
-                $"Well done! you played {resultToPrint} and win!!"
-                : $"Oh no! you played {resultToPrint} an loss!!";
+                $"Well done! you played {playerPlay} and Machine played {machinePlay}, so you win!!"
+                : $"Oh no! you played {playerPlay} and Machine played {machinePlay}, so you loss!!";
 
         }
 
-        public string CalculatePlays(int machinePlay, int userPlay)
+        public static string CalculatePlays(int machinePlay, int userPlay)
         {
-            var machinePlayConverted = (JokenpoEnum)machinePlay;
             var userPlayConverted = (JokenpoEnum)userPlay;
+            var machinePlayConverted = (JokenpoEnum)machinePlay;
 
-            if(machinePlay == userPlay){
-                return $"A tie!! play again.";
-            }
-            else
+            string result = CalculatePlay(userPlayConverted, machinePlayConverted);
+
+            return result switch
             {
-                if((machinePlayConverted == JokenpoEnum.razor 
-                    && userPlayConverted == JokenpoEnum.rock)
-                    || (machinePlayConverted == JokenpoEnum.paper 
-                    && userPlayConverted == JokenpoEnum.razor)
-                    || (machinePlayConverted == JokenpoEnum.rock 
-                    && userPlayConverted == JokenpoEnum.paper)
-                )
-                {
-                    return PrintResultTranslated(userPlay, true);
-                }
-                else
-                {
-                    return PrintResultTranslated(userPlay, false);
-                }
+                "WIN" => PrintResultTranslated(userPlayConverted, machinePlayConverted, true),
+                "LOST" => PrintResultTranslated(userPlayConverted, machinePlayConverted, false),
+                _ => $"A tie!! play again.",
+            };
+        }
+
+        private static string CalculatePlay(JokenpoEnum player, JokenpoEnum machine)
+        {
+            if (player == machine)
+            {
+                return "TIE";
             }
+
+            if (player == JokenpoEnum.rock
+                && machine == JokenpoEnum.razor)
+            {
+                return "WIN";
+            }
+
+            if (player == JokenpoEnum.paper
+                && machine == JokenpoEnum.rock)
+            {
+                return "WIN";
+            }
+
+            if (player == JokenpoEnum.razor
+                && machine == JokenpoEnum.paper)
+            {
+                return "WIN";
+            }
+
+
+            return "LOST";
         }
 
         public void StartJokenpo()
         {
-            string result;
-            int player;
+            Console.WriteLine("Make your choice!! \n1 - Rock \n2 - Paper \n3 - Razor");
+            int playerPlay = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("Do you play!! \n1 - Rock \n2 - Paper \n3 - Razor");
-            player = Convert.ToInt16(Console.ReadLine());
+            int enumCount = Enum.GetNames(typeof(JokenpoEnum)).Length;
+
+            if (playerPlay > enumCount)
+            {
+                Console.WriteLine($"Sorry but you have only {enumCount} options.");
+                StartAgain();
+            }
             
             Console.WriteLine("Jokenpo!!");
 
-            result = PlayJokenpoAndPrintResult(player);
-            Console.WriteLine($"The result is: {result}");
+            string result = PlayJokenpoAndPrintResult(playerPlay);
+            Console.WriteLine(result);
+
+            StartAgain();
         }
 
-        public enum JokenpoEnum
+        private void StartAgain()
         {
-            rock = 1,
-            paper = 2,
-            razor = 3
+            Console.WriteLine("................................");
+            StartJokenpo();
         }
     }
 }
