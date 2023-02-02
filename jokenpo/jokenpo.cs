@@ -4,8 +4,8 @@ namespace jokenpo
 {
     public class Jokenpo
     {
-        int init = 1;
-        int limit = 3;
+        readonly int init = 1;
+        readonly int limit = 3;
 
         public string PlayJokenpoAndPrintResult(int player)
         {
@@ -23,7 +23,7 @@ namespace jokenpo
 
         public string PrintResultTranslated(int result, bool isWinner)
         {
-            var resultToPrint = (JokenpoDictionary)result;
+            var resultToPrint = (JokenpoEnum)result;
 
             return isWinner ? 
                 $"Well done! you played {resultToPrint} and win!!"
@@ -33,20 +33,21 @@ namespace jokenpo
 
         public string CalculatePlays(int machinePlay, int userPlay)
         {
-            var machinePlayConverted = (JokenpoDictionary)machinePlay;
-            var userPlayConverted = (JokenpoDictionary)userPlay;
+            var machinePlayConverted = (JokenpoEnum)machinePlay;
+            var userPlayConverted = (JokenpoEnum)userPlay;
 
             if(machinePlay == userPlay){
                 return $"A tie!! play again.";
             }
             else
             {
-                if((machinePlayConverted == JokenpoDictionary.razor 
-                && userPlayConverted == JokenpoDictionary.rock)
-                || (machinePlayConverted == JokenpoDictionary.paper 
-                && userPlayConverted == JokenpoDictionary.razor)
-                || (machinePlayConverted == JokenpoDictionary.rock 
-                && userPlayConverted == JokenpoDictionary.paper))
+                if((machinePlayConverted == JokenpoEnum.razor 
+                    && userPlayConverted == JokenpoEnum.rock)
+                    || (machinePlayConverted == JokenpoEnum.paper 
+                    && userPlayConverted == JokenpoEnum.razor)
+                    || (machinePlayConverted == JokenpoEnum.rock 
+                    && userPlayConverted == JokenpoEnum.paper)
+                )
                 {
                     return PrintResultTranslated(userPlay, true);
                 }
@@ -71,7 +72,7 @@ namespace jokenpo
             Console.WriteLine($"The result is: {result}");
         }
 
-        public enum JokenpoDictionary
+        public enum JokenpoEnum
         {
             rock = 1,
             paper = 2,
