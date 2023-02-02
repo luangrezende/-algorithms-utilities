@@ -1,4 +1,4 @@
-﻿namespace App.Test
+﻿namespace CalculoMedia
 {
     public class ResultadoModel
     {

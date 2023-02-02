@@ -1,4 +1,4 @@
-﻿namespace jokenpo
+﻿namespace Jokenpo
 {
     class Program
     {

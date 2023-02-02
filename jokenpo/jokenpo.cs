@@ -1,7 +1,7 @@
 using Jokenpo.Enum;
 using System;
 
-namespace jokenpo
+namespace Jokenpo
 {
     public class Jokenpo
     {
@@ -71,7 +71,7 @@ namespace jokenpo
             Console.WriteLine("Make your choice!! \n1 - Rock \n2 - Paper \n3 - Razor");
             int playerPlay = Convert.ToInt16(Console.ReadLine());
 
-            int enumCount = Enum.GetNames(typeof(JokenpoEnum)).Length;
+            int enumCount = Enum.JokenpoEnum.GetNames(typeof(JokenpoEnum)).Length;
 
             if (playerPlay > enumCount)
             {

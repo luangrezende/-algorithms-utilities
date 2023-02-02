@@ -1,6 +1,4 @@
-﻿using App.Test;
-
-namespace CalculoMedia
+﻿namespace CalculoMedia
 {
     public class Program
     {
