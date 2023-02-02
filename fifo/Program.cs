@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace Queue
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var queue = new Fifo();
+            queue.StartFifo();
+            queue.StartFilo();
+        }
+    }
+}

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace jokenpo
+﻿namespace jokenpo
 {
     class Program
     {

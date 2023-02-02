@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jokenpo", "jokenpo\Jokenpo.csproj", "{65C57186-1C10-4C93-A2B8-6B545CAE3F4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifo", "Fifo\Fifo.csproj", "{71394F76-D3B2-4F00-8A86-F70722B094FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "Fifo\Queue.csproj", "{71394F76-D3B2-4F00-8A86-F70722B094FA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculoMedia", "CalculoMedia\CalculoMedia.csproj", "{47D5C1FF-34E2-4472-B320-4A4DF80CF7C5}"
 EndProject
