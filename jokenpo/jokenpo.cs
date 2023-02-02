@@ -48,27 +48,19 @@ namespace jokenpo
         private static string CalculatePlay(JokenpoEnum player, JokenpoEnum machine)
         {
             if (player == machine)
-            {
                 return "TIE";
-            }
 
             if (player == JokenpoEnum.rock
                 && machine == JokenpoEnum.razor)
-            {
                 return "WIN";
-            }
 
             if (player == JokenpoEnum.paper
                 && machine == JokenpoEnum.rock)
-            {
                 return "WIN";
-            }
 
             if (player == JokenpoEnum.razor
                 && machine == JokenpoEnum.paper)
-            {
                 return "WIN";
-            }
 
 
             return "LOST";
