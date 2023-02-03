@@ -22,11 +22,12 @@ namespace BubbleSort.App
                         (_listNumeros[sort], _listNumeros[sort + 1]) = (_listNumeros[sort + 1], _listNumeros[sort]);
                     }
                 }
+                ShowResults(_listNumeros);
             }
             return _listNumeros;
         }
 
-        public int MenorNumero(bool escolha, List<int> numeros)
+        public static int MenorNumero(bool escolha, List<int> numeros)
         {
             switch (escolha)
             {
@@ -56,32 +57,26 @@ namespace BubbleSort.App
             }
         }
 
-        public void ShowResults(int[] numeros)
+        public static void ShowResults(int[] numeros)
         {
-            int line = 0;
-            int row = 0;
-
-            //Console.Clear();
+            Console.Clear();
             foreach (var item in numeros)
             {
-                //Console.WriteLine(item);
                 for (int i = 0; i < item; i++)
                 {
                     Console.Write(".");
                 }
-                line++;
-
-
 
                 //TODO: remover apos teste
                 Console.WriteLine(item);
             }
+            Thread.Sleep(250);
         }
 
         private static List<int> BuildNumbers()
         {
             int limit = 0;
-            int count = 9;
+            int count = 40;
 
             List<int> numberList = new();
             var random = new Random();
