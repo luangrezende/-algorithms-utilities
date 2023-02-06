@@ -22,6 +22,7 @@ namespace BubbleSort.App
                         (_listNumeros[sort], _listNumeros[sort + 1]) = (_listNumeros[sort + 1], _listNumeros[sort]);
                     }
                 }
+                //somente utilizado para apresentar resultados
                 ShowResults(_listNumeros);
             }
             return _listNumeros;
